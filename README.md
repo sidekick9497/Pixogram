@@ -1,3 +1,4 @@
+ # Pixogram App using Angular
  ## Angular LifeCycle hooks.
  ### lifecycle starts from initiation and ends when distroyed
  ###  divided into multiple phases
