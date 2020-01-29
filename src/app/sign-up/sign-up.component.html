@@ -1,0 +1,38 @@
+<div class="ml-3 offset-md-4 offset-lg-4 " >
+    <!-- SIGNUP INFORMATION-->
+    <form [formGroup]="formGroupSignUp" (ngSubmit) = 'saveDetails()'>
+        <h1>Sign Up</h1>
+        <div class="form-group">
+            <label for="fname">First Name</label>
+            <input type="text" class="form-control" name="firs_name"required>
+        
+            <label for="lname">Last Name</label>
+            <input type="text" class="form-control" name="last_name">
+                
+            <label for="uname">User Name</label>
+            <input type="text" min="8" max="12" class="form-control" name="user_name">
+
+            <label for="email">Email</label>
+            <input class="form-control" type="email" name="email" required>
+        
+
+            <label for="dob">dob</label>
+            <input class="form-control" type="date" name="dob">
+    
+            <label for="password">Password</label>
+            <input class="form-control" type="password" name="password">
+        
+        
+            <label for="confirmpassword">Confirm Password</label>
+            <input class="form-control" type="password" name="confirmpassword">
+        
+        
+            <label for="profilepic">Profile 
+            </label>
+            <input type="file" class="form-control">
+        
+            <input class="btn btn-info" type="submit">  
+            <input type="reset" class="btn btn-info">
+        </div>   
+    </form>
+</div>
