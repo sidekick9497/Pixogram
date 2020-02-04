@@ -1,0 +1,35 @@
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col align-self-center mt-5 ml-5">
+        <aside class="">
+
+          <!--SIGN UP AND LOGIN STUB-->
+          <div class="btn-group-vertical border">
+              <button type="button" class="btn-option btn btn-lg mb-1">Login</button>
+              <a [routerLink]="['/signup']"><button type="button" class="btn-option btn btn-lg">Sign up</button></a>
+          </div>
+      </aside>
+      </div>
+      <div class="col-md-3">
+        <form action="#" method="post">
+          <h1>Sign Up</h1>
+          <div class="form-group"  #frm="ngForm" ngForm>
+              <label for="uname">User Name</label>
+              <input type="text" min="8" max="12" ngModel class="form-control" name="uname">
+
+
+              <label for="password">Password</label>
+              <input class="form-control" type="password" ngModel name="password">
+              <span class="text-danger text-italic">{{errorMessage}}</span>
+              <br>
+              <input class="btn btn-info mt-4" (click)="login(frm)" type="submit">
+
+          </div>
+        </form>
+      </div>
+      <div class="col-md-6"></div>
+
+   </div>
+  </div>
+</section>

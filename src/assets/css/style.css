@@ -1,5 +1,7 @@
 body{
     margin: 50px;
+
+    background-image:url(../images/Subtle-Prism.svg);
 }
 
 @keyframes zoomIn {
@@ -9,9 +11,8 @@ body{
     50% {
       opacity: 1; } }
 .animateThis
-{   height:980px;
-    width:100%;
-    background-image:linear-gradient(45deg,#00aeff,#a68eff);
+{
+  
     animation: zoomIn 0.7s cubic-bezier(0.445, 0.05, 0.55, 0.95);
 }
 .loader {
@@ -22,8 +23,6 @@ body{
     border: 6px solid #1D9AF2;
     border-top: 3px solid #fff;
     animation: spinner1 600ms linear infinite;
-
-
     }
     @keyframes spinner1 {
     to {
@@ -37,6 +36,26 @@ body{
     bottom: auto;
     left: 50%;
 }
+.btn-option-nav
+{
+  color: #E8E8E8;
+  padding: 0 15px;
+  cursor: pointer;
+  height:48px;
+  white-space: nowrap;
+  font-size:28px;
+  transition: all 0.2s ease-in-out;
+  margin-right: 1em;
+}
+.btn-option-nav:hover
+{
+  transform: scale(1.1);
+  border: 2px solid #1D9AFF;
+  border-radius: 7px;
+  color:#1D9AF2 ;
+
+}
+
 .btn-option
   {
     color: whitesmoke;
@@ -45,20 +64,20 @@ body{
     border-radius: 4px;
     padding: 0 15px;
     cursor: pointer;
-    height:48px;
     white-space: nowrap;
-    font-size:28px;
     transition: all 0.2s ease-in-out;
     }
   .btn-option:hover {
     transform: scale(1.2);
-    border: 4px solid #1D9AFF;
+    border: 2px solid #1D9AFF;
     border-radius: 7px;
     color:#1D9AF2 ;
+    margin-top: 10px;
+    margin-bottom: 10px;
     background:rgba(255, 255,255, 0.8) ;
   }
 
-  
+
   .u--zoomIn {
     -webkit-animation: zoomIn 1s cubic-bezier(0.445, 0.05, 0.55, 0.95);
     -moz-animation: zoomIn 1s cubic-bezier(0.445, 0.05, 0.55, 0.95);
@@ -71,20 +90,21 @@ body{
       overflow: hidden;
       border-radius: 50%;
     }
-    
+
   .circular-portrait img {
       width: auto;
       height: auto;
     }
-  .nav
-  { 
+  .navigation
+  {
     display: block;
     width: 100%;
     height: 75px;
     background: #000;
-    position: absolute;
+    position: fixed;
     top:0px;
-    background: linear-gradient(to right, #20bdff, #a5fecb, #5433ff);
+    background: url(../images/nav-background.svg);
+    z-index: 10;
 
   }
   .image-holder
@@ -95,4 +115,4 @@ body{
     border-radius: 5px;
     border: 3px darkblue;
     margin: 4px;
-  }  
+  }

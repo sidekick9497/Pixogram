@@ -1,0 +1,17 @@
+<!-- <app-aside-choice></app-aside-choice>
+<app-sign-up></app-sign-up> -->
+<mat-card>
+<mat-card-title>
+  Pipe Example
+</mat-card-title>
+  <mat-card-content>
+
+<mat-form-field>
+    <input #input='ngModel' ngModel matInput type="text" placeholder="Remove digits">
+
+</mat-form-field>
+<h3 >{{input.value | removeDigits:"hello"}}</h3>
+<i class="text-danger" *ngIf="!input.value && input.dirty">invald input</i>
+</mat-card-content>
+
+</mat-card>

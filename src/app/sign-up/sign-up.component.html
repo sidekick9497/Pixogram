@@ -1,38 +1,59 @@
 <div class="ml-3 offset-md-4 offset-lg-4 " >
     <!-- SIGNUP INFORMATION-->
-    <form [formGroup]="formGroupSignUp" (ngSubmit) = 'saveDetails()'>
-        <h1>Sign Up</h1>
-        <div class="form-group">
-            <label for="fname">First Name</label>
-            <input type="text" class="form-control" name="firs_name"required>
-        
-            <label for="lname">Last Name</label>
-            <input type="text" class="form-control" name="last_name">
-                
-            <label for="uname">User Name</label>
-            <input type="text" min="8" max="12" class="form-control" name="user_name">
 
-            <label for="email">Email</label>
-            <input class="form-control" type="email" name="email" required>
-        
-
-            <label for="dob">dob</label>
-            <input class="form-control" type="date" name="dob">
-    
-            <label for="password">Password</label>
-            <input class="form-control" type="password" name="password">
-        
-        
-            <label for="confirmpassword">Confirm Password</label>
-            <input class="form-control" type="password" name="confirmpassword">
-        
-        
-            <label for="profilepic">Profile 
-            </label>
-            <input type="file" class="form-control">
-        
-            <input class="btn btn-info" type="submit">  
-            <input type="reset" class="btn btn-info">
-        </div>   
-    </form>
 </div>
+
+<section>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col mt-5 ml-5">
+        <aside>
+
+          <!--SIGN UP AND LOGIN STUB-->
+          <div class="btn-group-vertical ">
+              <button type="button" class="btn-option btn btn-lg mb-1"  [routerLink]="['/login']">Login</button>
+              <a [routerLink]="['/signup']"><button type="button" class="btn-option btn btn-lg">Sign up</button></a>
+          </div>
+      </aside>
+      </div>
+      <div class="col-md-3">
+        <form [formGroup]="formGroupSignUp" (ngSubmit) = 'saveDetails()'>
+          <mat-form-field>
+            <input matInput [formControl]="formGroupSignUp.controls.firstName" placeholder="first name" type="text"name="first_name" required>
+          </mat-form-field>
+          <mat-form-field>
+          <input matInput [formControl]="formGroupSignUp.controls.lastName" type="text" placeholder="Last Name" name="last_name">
+        </mat-form-field>
+          <mat-form-field>
+          <input matInput [formControl]="formGroupSignUp.controls.userName" type="text" min="8" max="12"  placeholder="User Name" name="user_name">
+        </mat-form-field>
+         <mat-form-field>
+            <input matInput [formControl]="formGroupSignUp.controls.email" type="email" placeholder="Email" name="email" required>
+          </mat-form-field>
+
+          <mat-form-field>
+          <input matInput [formControl]="formGroupSignUp.controls.dob" type="date" placeholder="Date of Birth" name="dob">
+        </mat-form-field>
+          <br>
+          <mat-form-field>
+          <input matInput  [formControl]="formGroupSignUp.controls.password"  type="password" placeholder="password" name="password">
+          </mat-form-field>
+          <br>
+         <mat-form-field>
+          <input matInput [formControl]="formGroupSignUp.controls.confirmPassword"  type="password" placeholder="confirm password" name="confirmpassword">
+        </mat-form-field>
+
+          <br>
+          <input class=" mt-2 mr-2 btn btn-info" type="submit">
+          <input type="reset" class=" mt-2 ml-2 btn btn-info">
+
+      </form>
+      </div>
+      <div class="col-md-6">
+
+      </div>
+
+   </div>
+  </div>
+
+</section>
