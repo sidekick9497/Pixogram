@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterContentInit } from '@angular/core';
 import {FormGroup, FormBuilder, FormControl, FormsModule, ReactiveFormsModule, Validators, ValidatorFn, AbstractControl} from '@angular/forms';
 import { invalid } from '@angular/compiler/src/render3/view/util';
 
@@ -8,7 +8,7 @@ import { invalid } from '@angular/compiler/src/render3/view/util';
   templateUrl: './sign-up.component.html',
   styleUrls: ['./sign-up.component.css']
 })
-export class SignUpComponent implements OnInit {
+export class SignUpComponent implements OnInit, AfterContentInit {
   formGroupSignUp: FormGroup ;
   password: string;
   // formBuilder is a service which is an example of dependency injection
@@ -32,6 +32,7 @@ export class SignUpComponent implements OnInit {
       if(this.formGroupSignUp.valid)
       {
           //save the details.
+          console.log("details are getting saved")
       }
       else{
         console.log("details are invalid");
@@ -92,17 +93,28 @@ export class SignUpComponent implements OnInit {
 
     }
    }
-   matchPassword(txtControl: FormControl):ValidatorFn
+   matchPassword():ValidatorFn
    {
-        return (control: AbstractControl):{[key:string]:boolean} =>
+
+       return (control: AbstractControl):{[key:string]:boolean} =>
         {
-            return {}
+           if(this.formGroupSignUp.controls.password.value !== control.value)
+            return {
+                invalid:true
+            }
+            return
+            {}
         }
+
     }
 
    ngOnInit()
    {
 
-     this.formGroupSignUp.controls.confirmPassword.setValidators(Validators.compose([this.matchPassword]))
+
+   }
+   ngAfterContentInit()
+   {
+    this.formGroupSignUp.controls.confirmPassword.setValidators(Validators.compose([this.matchPassword()]))
    }
   }

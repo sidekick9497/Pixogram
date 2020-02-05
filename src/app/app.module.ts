@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms'
 import { AppRoutingModule } from './app-routing.module';
+import {HttpClientModule} from '@angular/common/http'
 import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
@@ -21,7 +22,10 @@ import { ErrorComponent } from './error/error.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatInputModule} from '@angular/material/input';
 import {MatCardModule} from '@angular/material/card';
-import {RemoveDigitsPipe} from './pipes/remove-digits.pipe'
+import {MatButtonModule} from '@angular/material/button';
+import {RemoveDigitsPipe} from './pipes/remove-digits.pipe';
+import {MatDividerModule} from '@angular/material/divider';
+import { from } from 'rxjs';
 
 
 @NgModule({
@@ -51,7 +55,10 @@ import {RemoveDigitsPipe} from './pipes/remove-digits.pipe'
     ReactiveFormsModule,
     BrowserAnimationsModule,
     MatInputModule,
-    MatCardModule
+    MatCardModule,
+    MatButtonModule,
+    MatDividerModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

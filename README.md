@@ -37,3 +37,11 @@
 6. All the classes under the scanning path decorated with `@Component` annotation is automatically used by spring context to manage their beans.
 7. Dependency injections are done by using `@Autowired` annotation. It is not mandatory for constructor.
 8.  Every field, class and method decorated with `@Autowired` gets injected with dependency right after object creation, irrespective of their access modifier.
+## Spring MVC
+  1. spring mvc uses front construction architecture to implement mvc pattern.
+  2. Every request is intecepted by an inbuilt servelet known as dispatcher servlet, which
+  acts as front controller.
+  3. the action method is based on url.
+  4. same url cannot be mapped to multiple methods, but multiple urls can be mapped to same method.
+  5. The link urls by default takes the relative url
+  6. urls must always be defined in absolute relation.
