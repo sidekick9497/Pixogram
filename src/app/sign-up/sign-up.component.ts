@@ -1,6 +1,9 @@
 import { Component, OnInit, AfterContentInit } from '@angular/core';
 import {FormGroup, FormBuilder, FormControl, FormsModule, ReactiveFormsModule, Validators, ValidatorFn, AbstractControl} from '@angular/forms';
 import { invalid } from '@angular/compiler/src/render3/view/util';
+import { UserDaoService } from '../user-dao.service';
+import { User } from '../models/user.model';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -14,7 +17,7 @@ export class SignUpComponent implements OnInit, AfterContentInit {
   // formBuilder is a service which is an example of dependency injection
   // angular will automatically create the  object of that service class and inject
   // it into constructor of element.
-  constructor(formBuilder: FormBuilder) {
+  constructor(formBuilder: FormBuilder,public userDao: UserDaoService, public router: Router) {
     this.password = ""
     this.formGroupSignUp = formBuilder.group({
         firstName: new FormControl("",Validators.compose([this.nameCheck])),
@@ -32,7 +35,24 @@ export class SignUpComponent implements OnInit, AfterContentInit {
       if(this.formGroupSignUp.valid)
       {
           //save the details.
+          const firstName = this.formGroupSignUp.controls.firstName.value;
+          const lastName = this.formGroupSignUp.controls.lastName.value;
+          const userName = this.formGroupSignUp.controls.userName.value;
+          const email = this.formGroupSignUp.controls.email.value;
+          const dob: Date = this.formGroupSignUp.controls.dob.value;
+          const password = this.formGroupSignUp.controls.password.value;
           console.log("details are getting saved")
+          const user: User = new User(firstName, lastName, userName, email,password,dob);
+          this.userDao.addOneUser(user).subscribe((data)=>
+          {
+            console.log("details saved");
+            this.router.navigateByUrl('/login');
+          },
+          (err)=>{
+            alert("some error has occured, failed to save data");
+          }
+          );
+
       }
       else{
         console.log("details are invalid");

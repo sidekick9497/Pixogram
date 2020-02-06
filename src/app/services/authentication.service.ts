@@ -3,40 +3,20 @@ import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, Router } from
 import { HttpClient } from '@angular/common/http';
 import { User } from '../models/user.model';
 import { TypeScriptEmitter } from '@angular/compiler';
+import { UserDaoService } from '../user-dao.service';
+import { async } from '@angular/core/testing';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthenticationService{
-
+  USER_TOKEN = 'user';
   USERS_URL =  'http://localhost:3000/users';
-  constructor(public router: Router,public httpClient: HttpClient) { }
+  constructor(public router: Router,public userDao: UserDaoService) { }
 
-  logIn(userName: string, password: string)
-  {
-    /*if(userName ==='harry' && password ==="abcd")
-    {
-      localStorage.setItem('user','harry');
-      return true;
-    }
-    else{
-      return false;
-    }*/
-    return this.httpClient.get(this.USERS_URL+"/"+userName).subscribe((user:User) =>
-    {
-        if(user.id == userName && user.password == password)
-        {
-          return true;
-        }
-        else
-        {
-          return false;
-        }
-    })
-  }
   logout()
   {
-    localStorage.removeItem('user');
+    localStorage.removeItem(this.USER_TOKEN);
     return true;
   }
 
@@ -44,7 +24,7 @@ export class AuthenticationService{
 
   isUserLoggedIn()
   {
-      if(localStorage.getItem('user')!== null)
+      if(localStorage.getItem(this.USER_TOKEN)!== null)
       {
         return true;
       }
