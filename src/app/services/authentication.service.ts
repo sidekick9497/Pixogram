@@ -3,7 +3,7 @@ import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, Router } from
 import { HttpClient } from '@angular/common/http';
 import { User } from '../models/user.model';
 import { TypeScriptEmitter } from '@angular/compiler';
-import { UserDaoService } from '../user-dao.service';
+import { UserDaoService } from './user-dao.service';
 import { async } from '@angular/core/testing';
 
 @Injectable({

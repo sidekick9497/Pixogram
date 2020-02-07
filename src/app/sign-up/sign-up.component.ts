@@ -1,7 +1,7 @@
 import { Component, OnInit, AfterContentInit } from '@angular/core';
 import {FormGroup, FormBuilder, FormControl, FormsModule, ReactiveFormsModule, Validators, ValidatorFn, AbstractControl} from '@angular/forms';
 import { invalid } from '@angular/compiler/src/render3/view/util';
-import { UserDaoService } from '../user-dao.service';
+import { UserDaoService } from '../services/user-dao.service';
 import { User } from '../models/user.model';
 import { Router } from '@angular/router';
 

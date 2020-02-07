@@ -45,3 +45,5 @@
   4. same url cannot be mapped to multiple methods, but multiple urls can be mapped to same method.
   5. The link urls by default takes the relative url
   6. urls must always be defined in absolute relation.
+### HIBERANATE VALIDATOR
+  1. It is always recommeneded to use java standard validation annototions instead of hibernate annotations, to prevent the vendor locking. The hibernate implementation will automatically work behind the scenes.
