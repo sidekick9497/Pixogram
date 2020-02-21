@@ -56,3 +56,6 @@
   the verified basic authentication token is required to be associated.
  ### spring cloud proxy
  1. feign client replaces the urls with method calls, the url management is oursourced to a proxy interface.
+ 2. A Discovery service will be a spring boot application having a dependency of depedency server having added.
+ Eureks discovery service is a naming server, which registers all micro services and make them accesssible by their name.
+ 
