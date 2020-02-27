@@ -6,7 +6,7 @@
 <section>
   <div class="container-fluid">
     <div class="row">
-      <div class="col mt-5 ml-5">
+      <div class="col col-md-2  col-sm-2 col-lg-2mt-5 ml-5">
         <aside>
 
           <!--SIGN UP AND LOGIN STUB-->
@@ -16,7 +16,7 @@
           </div>
       </aside>
       </div>
-      <div class="col-md-3">
+      <div class="col-md-6 col-1 col-lg-6 col-sm-6">
         <form [formGroup]="formGroupSignUp" (ngSubmit) = 'saveDetails()'>
           <mat-form-field>
             <input matInput [formControl]="formGroupSignUp.controls.firstName" placeholder="first name" type="text"name="first_name" required>
@@ -24,9 +24,11 @@
           <mat-form-field>
           <input matInput [formControl]="formGroupSignUp.controls.lastName" type="text" placeholder="Last Name" name="last_name">
         </mat-form-field>
+        <br>
           <mat-form-field>
           <input matInput [formControl]="formGroupSignUp.controls.userName" type="text" min="8" max="12"  placeholder="User Name" name="user_name">
         </mat-form-field>
+        <br>
          <mat-form-field>
             <input matInput [formControl]="formGroupSignUp.controls.email" type="email" placeholder="Email" name="email" required>
           </mat-form-field>
@@ -49,7 +51,7 @@
 
       </form>
       </div>
-      <div class="col-md-6">
+      <div class="col-md-4 col-lg-4 col-sm-4">
 
       </div>
 

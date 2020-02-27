@@ -13,7 +13,7 @@ import { User } from '../models/user.model';
 export class LoginComponent implements OnInit {
   errorMessage: String = ""
   USER_TOKEN = 'user';
-  constructor(public userDao: UserDaoService,public router: Router) { }
+  constructor(public userAuth:AuthenticationService,public router: Router) { }
 
   ngOnInit() {
   }
@@ -21,7 +21,7 @@ export class LoginComponent implements OnInit {
   {
     const userName = form.value.uname;
     const password = form.value.password;
-    this.userDao.getOneUser(userName).subscribe((user:User)=>
+   /* this.userDao.getOneUser(userName).subscribe((user:User)=>
     {
       if(user.id == userName && user.password == password)
       {
@@ -40,7 +40,19 @@ export class LoginComponent implements OnInit {
       form.value.password = "";
       form.reset();
       this.errorMessage = "Invalid userName or password";
-    })
+    })*/
+    this.userAuth.login(userName, password).subscribe(
+      // success function
+      successData=>{
+        console.log("IN LOGIN : SUCCESS...");
+        console.log(successData);
+        this.router.navigateByUrl('/gallery');
+      },
+      // failure function
+      failureData => {
+        console.log("IN LOGIN: FAILED!!!");
+      }
+    );
 }
 
 }

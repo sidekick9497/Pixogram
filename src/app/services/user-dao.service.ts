@@ -6,7 +6,7 @@ import { User } from '../models/user.model';
   providedIn: 'root'
 })
 export class UserDaoService {
-  USER_URL = "http://localhost:3000/users";
+  USER_URL = "http://localhost:8765/user-service/users/signup";
   constructor(public httpClient: HttpClient) { }
 
   getOneUser(userId: string)

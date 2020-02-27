@@ -49,7 +49,7 @@ export class SignUpComponent implements OnInit, AfterContentInit {
             this.router.navigateByUrl('/login');
           },
           (err)=>{
-            alert("some error has occured, failed to save data");
+            console.log("some error has occured, failed to save data");
           }
           );
 
