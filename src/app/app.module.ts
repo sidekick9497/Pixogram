@@ -26,6 +26,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {RemoveDigitsPipe} from './pipes/remove-digits.pipe';
 import {MatDividerModule} from '@angular/material/divider';
 import { from } from 'rxjs';
+import { NavLoggedoutComponent } from './nav-loggedout/nav-loggedout.component';
 
 
 @NgModule({
@@ -46,7 +47,8 @@ import { from } from 'rxjs';
     ConnectionsComponent,
     SearchComponent,
     ErrorComponent,
-    RemoveDigitsPipe
+    RemoveDigitsPipe,
+    NavLoggedoutComponent
   ],
   imports: [
     BrowserModule,

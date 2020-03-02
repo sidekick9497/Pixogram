@@ -1,0 +1,12 @@
+.box
+{
+    height: 60%;
+    width: 20%;
+    min-height: 400px;
+    min-width: 250px;
+}
+.bg-none
+{
+    background:none !important;
+    color:whitesmoke;
+}
