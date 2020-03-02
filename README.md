@@ -59,3 +59,5 @@
  2. A Discovery service will be a spring boot application having a dependency of depedency server having added.
  Eureks discovery service is a naming server, which registers all micro services and make them accesssible by their name.
  
+ HTTP verb method returns back reponse in form of data, whereas http request method returns response in form of http events,
+ as this method responds the different stages of request response cycle.
