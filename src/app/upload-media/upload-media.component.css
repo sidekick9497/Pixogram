@@ -1,0 +1,10 @@
+.upload-box
+{
+    border: burlywood solid 3px;
+    border-radius: 5px;
+    min-height: 150px;
+    height: 10%;
+    width: 38%;
+    min-width: 300px;
+    padding: 10px;
+}

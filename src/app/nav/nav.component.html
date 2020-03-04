@@ -13,7 +13,7 @@
     <li class="nav-item">
       <a class="nav-link disabled btn-option-nav" href="#">disabled</a>
     </li>
-    <li *ngIf="authentication.isUserLoggedIn()" class="nav-item"><a [routerLink]="['/logout']" class="nav-link btn-option-nav">logout</a></li>
+  <li *ngIf="authentication.isUserLoggedIn()" class="nav-item"><a [routerLink]="['/logout']" class="nav-link btn-option-nav">logout</a></li>
   </ul>
 </div>
 -->
@@ -34,6 +34,8 @@
       <li class="nav-item">
         <a class="nav-link " [routerLink]="['/connections']">Connections</a>
       </li>
+  <li *ngIf="authentication.isUserLoggedIn()" class="nav-item"><a [routerLink]="['/logout']" class="nav-link btn-option-nav">logout</a></li>
+
     </ul>
     <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="search" placeholder="Search">

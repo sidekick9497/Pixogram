@@ -1,6 +1,11 @@
+
+<div>
 <canvas id="canvasBackground"></canvas>
-<app-nav></app-nav>
+
+<app-nav *ngIf="userLoggedIn"></app-nav>
+<app-nav-loggedout *ngIf="!userLoggedIn"></app-nav-loggedout>
 <!-- ADD NG-IF TO DISPLAY ONLY AFTER LOGGED IN -->
 
 <app-header></app-header>
 <router-outlet></router-outlet>
+</div>

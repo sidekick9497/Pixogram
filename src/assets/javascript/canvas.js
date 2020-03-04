@@ -2,6 +2,7 @@ function animateBg()
 {
 var c = document.getElementById("canvasBackground");
 console.log(c);
+
 var ctx = c.getContext("2d");
 var cH;
 var cW;
