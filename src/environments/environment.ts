@@ -3,7 +3,11 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  MEDIA_PLUMBING_URL:"http://localhost:8765/media-plumbing/media-feign",
+  USER_MICRO_SERVICE:"http://localhost:8765/user-service",
+  API_GATE_WAY:"http://localhost:8765"
+
 };
 
 /*

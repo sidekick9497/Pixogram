@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnChanges } from '@angular/core';
 import { AuthenticationService } from './services/authentication.service';
 declare function animateBg() ;
 @Component({
@@ -6,7 +6,7 @@ declare function animateBg() ;
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit{
+export class AppComponent implements OnInit,OnChanges{
   userLoggedIn: boolean
  constructor(public authentication: AuthenticationService)
  {
@@ -15,5 +15,10 @@ export class AppComponent implements OnInit{
   ngOnInit(): void {
     animateBg();
   }
+  ngOnChanges():void{
+    animateBg();
+    this.userLoggedIn = this.authentication.isUserLoggedIn();
+  }
+
   title = 'base-app';
 }

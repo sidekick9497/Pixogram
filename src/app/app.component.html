@@ -1,11 +1,9 @@
 
 <div>
-<canvas id="canvasBackground"></canvas>
+<canvas [hidden]="this.authentication.isUserLoggedIn()" id="canvasBackground"></canvas>
+<app-nav *ngIf="this.authentication.isUserLoggedIn()"></app-nav>
+<app-nav-loggedout *ngIf="!this.authentication.isUserLoggedIn()"></app-nav-loggedout>
 
-<app-nav *ngIf="userLoggedIn"></app-nav>
-<app-nav-loggedout *ngIf="!userLoggedIn"></app-nav-loggedout>
-<!-- ADD NG-IF TO DISPLAY ONLY AFTER LOGGED IN -->
-
-<app-header></app-header>
+<!--<app-header *ngIf="!this.authentication.isUserLoggedIn()"></app-header>-->
 <router-outlet></router-outlet>
 </div>

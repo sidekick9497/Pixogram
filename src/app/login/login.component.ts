@@ -19,8 +19,10 @@ export class LoginComponent implements OnInit {
   }
   login(form: FormGroup)
   {
-    const userName = form.value.uname;
-    const password = form.value.password;
+    //const userName = form.value.uname;
+    const userName = "harry123";
+    //const password = form.value.password;
+    const password = "hari123";
    /* this.userDao.getOneUser(userName).subscribe((user:User)=>
     {
       if(user.id == userName && user.password == password)

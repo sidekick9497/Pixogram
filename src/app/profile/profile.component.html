@@ -1,1 +1,5 @@
-<p>profile works!</p>
+<h1>This is profile page</h1>
+<form>
+<input [hidden]="true" type="file" #profilePic (change)="submit($event)">
+<button (click)="uploadPic(profilePic)"> upload </button>
+</form>

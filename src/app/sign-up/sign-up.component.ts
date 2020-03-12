@@ -1,9 +1,10 @@
 import { Component, OnInit, AfterContentInit } from '@angular/core';
 import {FormGroup, FormBuilder, FormControl, FormsModule, ReactiveFormsModule, Validators, ValidatorFn, AbstractControl} from '@angular/forms';
-import { invalid } from '@angular/compiler/src/render3/view/util';
+
 import { UserDaoService } from '../services/user-dao.service';
 import { User } from '../models/user.model';
 import { Router } from '@angular/router';
+import { MatDialogRef } from '@angular/material';
 
 
 @Component({
@@ -17,7 +18,7 @@ export class SignUpComponent implements OnInit, AfterContentInit {
   // formBuilder is a service which is an example of dependency injection
   // angular will automatically create the  object of that service class and inject
   // it into constructor of element.
-  constructor(formBuilder: FormBuilder,public userDao: UserDaoService, public router: Router) {
+  constructor(formBuilder: FormBuilder,public userDao: UserDaoService, public router: Router,public matDialogRef:MatDialogRef<SignUpComponent>) {
     this.password = ""
     this.formGroupSignUp = formBuilder.group({
         firstName: new FormControl("",Validators.compose([this.nameCheck])),
@@ -46,7 +47,8 @@ export class SignUpComponent implements OnInit, AfterContentInit {
           this.userDao.addOneUser(user).subscribe((data)=>
           {
             console.log("details saved");
-            this.router.navigateByUrl('/login');
+            this.matDialogRef.close();
+            this.router.navigateByUrl('');
           },
           (err)=>{
             console.log("some error has occured, failed to save data");

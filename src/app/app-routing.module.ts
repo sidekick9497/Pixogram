@@ -12,10 +12,12 @@ import { UploadMediaComponent } from './upload-media/upload-media.component';
 import { ConnectionsComponent } from './connections/connections.component';
 import { AuthenticationGuardService } from './services/authentication-guard.service';
 import { UserLoggedInGuardService } from './services/user-logged-in-guard.service';
+import { HomeComponent } from './home/home.component';
+import { SearchComponent } from './search/search.component';
 
 
-const routes: Routes = [{path:"",redirectTo:'login',pathMatch:'full'},
-                        {path:"login", component: LoginComponent,canActivate:[UserLoggedInGuardService]},
+const routes: Routes = [{path:"",component:HomeComponent,canActivate:[UserLoggedInGuardService]},
+                        {path:"login", component: HomeComponent,canActivate:[UserLoggedInGuardService]},
                         {path:"logout", component: LogoutComponent, canActivate:[AuthenticationGuardService]},
                         {path:"profile", component: ProfileComponent,canActivate:[AuthenticationGuardService]},
                         {path:"signup", component: SignUpComponent},
@@ -24,7 +26,8 @@ const routes: Routes = [{path:"",redirectTo:'login',pathMatch:'full'},
                         {path: 'gallery', component: GalleryComponent,canActivate:[AuthenticationGuardService]},
                         {path: 'base', component: BaseComponent },
                         {path:'upload',component: UploadMediaComponent, canActivate:[AuthenticationGuardService]},
-                        {path:'connections',component: ConnectionsComponent, canActivate:[AuthenticationGuardService]}];
+                        {path:'connections',component: ConnectionsComponent, canActivate:[AuthenticationGuardService]},
+                        {path:'search/:searchTerm',component:SearchComponent}];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

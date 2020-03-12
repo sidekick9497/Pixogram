@@ -13,6 +13,7 @@ import {map} from 'rxjs/operators';
 export class AuthenticationService{
   USER_USER_NAME = 'userName';
   USER_AUTH_TOKEN = 'userToken'
+  USER_ID_TOKEN = 'userId';
   USERS_URL =  'http://localhost:8765/user-service/login';
 
   constructor(public router: Router,public userDao: UserDaoService,public http:HttpClient) { }
@@ -23,14 +24,15 @@ export class AuthenticationService{
       const basicKey ="Basic " + window.btoa(userName + ":" + userPassword);
       console.log(basicKey);
       let headers = new HttpHeaders({
-        Authorization : basicKey
+        Authorization : basicKey,
+        "userName":userName
       });
       return this.http.get(this.USERS_URL, {headers}).pipe(
         // success function
         map(successData=>{
-          console.log("IN AUTH: success ")
+          console.log("IN AUTH: success " + successData)
           localStorage.setItem(this.USER_USER_NAME, userName);
-          // save the token
+          localStorage.setItem(this.USER_ID_TOKEN,successData.toString())
           localStorage.setItem(this.USER_AUTH_TOKEN, basicKey);
           return successData;
         }),
@@ -60,5 +62,20 @@ export class AuthenticationService{
      {
        return false;
      }
+  }
+  getAuthenticationToken()
+  {
+    if(this.isUserLoggedIn())
+    {
+      return sessionStorage.getItem(this.USER_AUTH_TOKEN);
+
+    }
+    return null;
+  }
+  getUserId():string
+  {
+     
+      return localStorage.getItem(this.USER_ID_TOKEN);
+  
   }
 }

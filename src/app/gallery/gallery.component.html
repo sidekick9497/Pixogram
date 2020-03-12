@@ -1,26 +1,42 @@
 
+
+<div class="gallery">
 <div class="container">
-  <app-upload-media></app-upload-media>
+  <!--<app-upload-media></app-upload-media>-->
+ 
+
   <div class="row">
-    <div *ngFor="let i of [1,2,3,4]" class="offset-2 col-8 col-md-6 col-lg-6 col-sm-8 ">
-      <mat-card class="example-card mb-2">
+    <div class="offset-2 col-8 col-md-6 col-lg-6 col-sm-8">
+    <div class="upload-media-wrapper">
+      <h3 class="text">Post Your Updates Now!</h3>
+      <button class="upload-button" (click)="openAddMediaDialog()">Upload</button>
+    </div>
+  </div>
+    <div *ngFor="let media of mediaList.medialist" class="offset-2 col-8 col-md-6 col-lg-6 col-sm-8 ">
+      <mat-card class="gallery-card mb-2">
         <mat-card-header>
-             <div mat-card-avatar style="background-image: url('https://material.angular.io/assets/img/examples/shiba2.jpg');background-size: cover;"></div>
-          <mat-card-title>Shiba Inu</mat-card-title>
-          <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+          <mat-card-title>{{media.title}}</mat-card-title>
         </mat-card-header>
-        <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+        <img mat-card-image src="http://localhost:8765/media-service/{{media.fileUrl}}" alt="#">
+     
         <mat-card-content>
           <p>
-            The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+              {{media.description}}
           </p>
         </mat-card-content>
-        <mat-card-actions>
-          <button mat-button>LIKE</button>
-          <button mat-button>SHARE</button>
+       <mat-divider></mat-divider>
+        <mat-card-actions class="actions">
+          <button mat-button>
+            <span class="icon"><img src="assets/images/like.svg"/></span>
+          </button>
+          <button mat-button>
+            <span class="icon"><img src="assets/images/dislike.svg"/></span>
+          </button>
+          <button mat-button><span class="icon"><img src="assets/images/comment.svg"/></span></button>
         </mat-card-actions>
       </mat-card>
   </div>
   </div>
 
+</div>
 </div>

@@ -1,6 +1,20 @@
+
 <div class="upload-box">
     <h1>upload here</h1>
-    <textarea placeholder="Type Something form-control" style="resize: none; width: 90%; margin-left: 2px;"></textarea>
-    <button class="btn btn-lg btn-success mr-5 ">Upload Image</button>   
-    <button class="btn btn-lg btn-info" >Post</button> 
+    <img height="200px" width="200px" src="../../assets/images/hero2.png" alt=""/>
+    <br>
+    <label for="title">Title </label>
+    <input class="form-control" #title name="title">
+    
+    <label for="decription">description</label>
+    <input class="form-control" #description name="description">
+
+    <label for="tags">tags</label>
+    <input class="form-control" #tags name="tags">
+    
+    <!--<textarea placeholder="Type Something"class=" form-control" style="resize: none; width: 90%; margin-left: 2px;"></textarea>-->
+    <input type="file"[hidden]="true" #mediaInput (change)="uploadMedia($event)"/>
+    <button class="btn btn-lg btn-success mr-5" (click)="openUpload(mediaInput)">Upload Image
+    </button>   
+    <button class="btn btn-lg btn-info" [disabled]="postDisabled" (click)="postMedia(title,description,tags)" >Post</button> 
 </div>

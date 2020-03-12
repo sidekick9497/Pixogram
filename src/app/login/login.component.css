@@ -1,12 +1,41 @@
 .box
 {
-    height: 60%;
-    width: 20%;
-    min-height: 400px;
-    min-width: 250px;
+    height: 400px;
+    width:  280px;
+    text-transform: uppercase;
+    text-shadow: azure;
+    
 }
 .bg-none
 {
     background:none !important;
     color:whitesmoke;
+}
+#login
+{
+    position: absolute;
+    z-index: 1000;
+}
+.card
+{
+    border: none;
+}
+.card-header
+{
+    background-color: #050300;
+    color: rgba(250, 170, 0,1); 
+    box-sizing:content-box;
+    border:#333 2px solid ;
+    border-top-left-radius:  10px;
+    border-top-right-radius: 10px;
+}
+.card-body
+{
+    border: rgba(250, 170, 0,1) 2px solid;
+    border-radius: 12px;
+    border-top: none;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    color: rgba(250, 170, 0,1);
+    
 }
