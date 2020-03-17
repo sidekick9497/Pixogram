@@ -46,7 +46,8 @@ export class AuthenticationService{
   logout()
   {
     localStorage.removeItem(this.USER_AUTH_TOKEN);
-    localStorage.removeItem(this.USER_USER_NAME)
+    localStorage.removeItem(this.USER_USER_NAME);
+    localStorage.removeItem(this.USER_ID_TOKEN);
     return true;
   }
 
@@ -67,7 +68,7 @@ export class AuthenticationService{
   {
     if(this.isUserLoggedIn())
     {
-      return sessionStorage.getItem(this.USER_AUTH_TOKEN);
+      return localStorage.getItem(this.USER_AUTH_TOKEN);
 
     }
     return null;

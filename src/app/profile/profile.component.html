@@ -1,5 +1,46 @@
-<h1>This is profile page</h1>
-<form>
-<input [hidden]="true" type="file" #profilePic (change)="submit($event)">
-<button (click)="uploadPic(profilePic)"> upload </button>
-</form>
+
+<div class="hero">
+    <div class="sub-hero"> 
+        <br><br> <br>
+        <input [hidden]="true" type="file" #profilePic (change)="submit($event)">
+        <div class="user-info">
+        <div class="circular-portrait">
+        <img [src]="imageUrl"/>
+        </div>
+        <h3>SIDEKICK</h3>
+        <button class="signup"(click)="uploadPic(profilePic)"> upload </button>
+       
+        </div>
+    <div class="information">
+        <button class="options">Followers</button>
+        <button class="options">following</button>
+    </div>  <!-- dummy data ends here-->
+    </div>
+    <div class="container mt-5">
+    <div  *ngFor="let follow of [0,1,2]" >
+           <div class="row">
+               <div class="mt-5 col-lg-2 col-md-2 col-sm-2 col-1"></div>
+                <div class=" col-lg-4 col-md-4 col-4 col-sm-4">
+                <div class=" mt-4 ml-3 circular-portrait">
+                    <img src="assets/images/collage-heart-2.jpg"/>
+                </div>
+                 
+                </div>
+                <div class="mt-5 col-5 col-lg-5 col-md-5 col-sm-5">
+                    <span class="name-text mr-5">Name here</span>
+                    <button class="options">Follow</button>
+                    <button *ngIf="false" class="options">Unfollow</button>
+                    </div>
+                    </div>
+            </div>
+    </div>
+
+    </div>
+<!-- hero poster ends here-->
+
+
+<!-- second section starts here-->
+
+<section class="second-section">
+
+</section>

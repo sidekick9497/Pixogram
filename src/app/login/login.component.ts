@@ -17,11 +17,12 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
   }
-  login(form: FormGroup)
+  login(username,Ipassword)
   {
-    //const userName = form.value.uname;
+    console.log("logging in ");
+    //const userName = username;
     const userName = "harry123";
-    //const password = form.value.password;
+   // const password = Ipassword;
     const password = "hari123";
    /* this.userDao.getOneUser(userName).subscribe((user:User)=>
     {
@@ -51,9 +52,7 @@ export class LoginComponent implements OnInit {
         this.router.navigateByUrl('/gallery');
       },
       // failure function
-      failureData => {
-        console.log("IN LOGIN: FAILED!!!");
-      }
+     
     );
 }
 

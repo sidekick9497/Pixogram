@@ -6,6 +6,8 @@ export class Media
   author: string;
   likedCount: number;
   dislikedCount: number;
+  liked: boolean;
+  disliked: boolean;
   comments: string[];
   title: string;
   constructor(fileUrl: string, title: string, description: string, author: string )

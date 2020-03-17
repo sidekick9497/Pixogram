@@ -38,5 +38,17 @@ export class MediaDaoService {
      console.log(ALL_MEDIA_URL);
      return this.httpClient.get(ALL_MEDIA_URL);
    }
+   likeMedia(mediaId:string)
+   {  
+     const LIKE_MEDIA_URL = this.MEDIA_SERVICE_URL+"/media/like/" + mediaId;
+     console.log(LIKE_MEDIA_URL)
+     return this.httpClient.post(LIKE_MEDIA_URL,null);
 
+   }
+   dislikeMedia(mediaId:string)
+   {
+     const UNLIKE_MEDIA_URL = this.MEDIA_SERVICE_URL+ "/media/unlike/"+mediaId;
+     console.log(UNLIKE_MEDIA_URL);
+     return this.httpClient.post(UNLIKE_MEDIA_URL,null);
+   }
 }

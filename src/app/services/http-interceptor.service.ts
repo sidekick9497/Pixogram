@@ -16,9 +16,12 @@ export class HttpInterceptorService implements HttpInterceptor{
     {
      
       let authenticationToken = this.authentication.getAuthenticationToken();
+      let userId = this.authentication.getUserId();
+      console.log(userId);
       request = request.clone({
         setHeaders:{
-          Authorization:authenticationToken
+          Authorization:authenticationToken,
+          "userId":userId
         }
       })
       return next.handle(request);

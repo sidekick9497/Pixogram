@@ -1,4 +1,9 @@
 *
 {
-  /*  color:white !important;*/
+ color: rgba(250, 170, 0,1);
+ font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+.black-nav
+{
+  background-color: #050300 !important;
 }

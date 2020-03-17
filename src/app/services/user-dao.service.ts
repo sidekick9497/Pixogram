@@ -9,7 +9,7 @@ import {environment} from './../../environments/environment'
 export class UserDaoService {
   USER_URL = "http://localhost:8765/user-service/users/signup";
   USER_URL_PIC_UPLOAD = 'http://localhost:8765/user-service/'
-
+  USER_FOLLOWERS_URL = "http://localhost:8765/plum"
   constructor(public httpClient: HttpClient) { }
 
   getOneUser(userId: string)

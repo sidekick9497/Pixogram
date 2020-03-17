@@ -26,13 +26,15 @@
         </mat-card-content>
        <mat-divider></mat-divider>
         <mat-card-actions class="actions">
-          <button mat-button>
-            <span class="icon"><img src="assets/images/like.svg"/></span>
+          <button mat-button (click)="like(media.id)">
+            <span *ngIf="!media.liked" class="icon" ><img src="assets/images/like.svg"/></span>
+            <span *ngIf="media.liked" class="icon" ><img src="assets/images/liked.svg"/></span>{{media.likedCount}}
           </button>
-          <button mat-button>
-            <span class="icon"><img src="assets/images/dislike.svg"/></span>
+          <button mat-button  (click)="dislike(media.id)">
+            <span *ngIf="media.disliked"class="icon"><img src="assets/images/disliked.svg"/></span>
+            <span *ngIf="!media.disliked"class="icon"><img src="assets/images/dislike.svg"></span>{{media.dislikedCount}}
           </button>
-          <button mat-button><span class="icon"><img src="assets/images/comment.svg"/></span></button>
+          <button mat-button ><span class="icon"><img src="assets/images/comment.svg"/></span></button>
         </mat-card-actions>
       </mat-card>
   </div>

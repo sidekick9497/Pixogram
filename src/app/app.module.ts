@@ -64,8 +64,8 @@ import {MatDialogModule} from '@angular/material'
     HttpClientModule,
     MatDialogModule
   ],
-  //providers: [{provide:HTTP_INTERCEPTORS,useClass:HttpInterceptorService,multi:true}],
-  providers:[],
+  providers: [{provide:HTTP_INTERCEPTORS,useClass:HttpInterceptorService,multi:true}],
+  //providers:[],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

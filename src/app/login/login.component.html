@@ -38,14 +38,14 @@
   <h1>Sign In</h1></div>
   <div class="card-body">
   <label for="uname">User Name</label>
-  <input type="text" min="8" max="12" ngModel class="form-control" name="uname">
+  <input type="text" min="8" max="12" ngModel class="form-control" #uname name="uname">
 
 
   <label for="password">Password</label>
-  <input class="form-control" type="password" ngModel name="password">
+  <input class="form-control" type="password"  #password ngModel name="password">
   <span class="text-danger text-italic">{{errorMessage}}</span>
   <br>
-  <input class="btn btn-info mt-4" (click)="login(frm)" type="submit">
+  <input class="btn btn-info mt-4" (click)="login(uname.value,password.value)" type="submit">
 
 </div>
 </div>

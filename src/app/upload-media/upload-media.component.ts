@@ -9,10 +9,11 @@ import { MediaDaoService } from '../services/mediaService/media-dao.service';
   styleUrls: ['./upload-media.component.css']
 })
 export class UploadMediaComponent implements OnInit {
-  
+  srcUrl:any;
   file: File;
   postDisabled: boolean;
   imgUrl:string = '/assets/images/hero2.png';
+  public imagePath;
 
 
   constructor(
@@ -21,6 +22,7 @@ export class UploadMediaComponent implements OnInit {
     public mediaDao:MediaDaoService,)
      { 
     this.postDisabled = true;
+    this.srcUrl = '/assets/images/hero2.png';
   }
 
   ngOnInit() {
@@ -33,6 +35,14 @@ export class UploadMediaComponent implements OnInit {
   uploadMedia(event)
   {
     this.file = event.target.files[0];
+   const fileReader: FileReader = new FileReader();
+   this.imagePath   = this.file;
+   fileReader.readAsDataURL(this.file);
+   fileReader.onload = (event)=>
+   {
+     this.srcUrl = fileReader.result;
+   }
+   
     console.log(this.file);
     if(this.file !== null || this.file != undefined)
     {

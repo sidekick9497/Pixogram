@@ -1,7 +1,7 @@
 
 <div class="upload-box">
-    <h1>upload here</h1>
-    <img height="200px" width="200px" src="../../assets/images/hero2.png" alt=""/>
+   
+    <img style="position: relative;left: 30%; border-radius:15px;" height="200px" width="200px" [src]="srcUrl" alt=""/>
     <br>
     <label for="title">Title </label>
     <input class="form-control" #title name="title">
@@ -14,6 +14,7 @@
     
     <!--<textarea placeholder="Type Something"class=" form-control" style="resize: none; width: 90%; margin-left: 2px;"></textarea>-->
     <input type="file"[hidden]="true" #mediaInput (change)="uploadMedia($event)"/>
+    <br>
     <button class="btn btn-lg btn-success mr-5" (click)="openUpload(mediaInput)">Upload Image
     </button>   
     <button class="btn btn-lg btn-info" [disabled]="postDisabled" (click)="postMedia(title,description,tags)" >Post</button> 

@@ -9,6 +9,13 @@
     text-align: center;
 
 }
+.subhero-text
+{
+    
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 21px;
+    font-style: italic;
+}
 .upload-button 
 {   top: 60px;
     position: relative;
@@ -35,6 +42,7 @@
 .gallery
 {
     background:url("/assets/images/Diamond-Sunset.svg");
+    height: 100%;
 }
 .gallery-card
 {

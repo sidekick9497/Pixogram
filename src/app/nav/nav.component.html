@@ -17,7 +17,7 @@
   </ul>
 </div>
 -->
-<nav class="navbar navbar-expand-lg navbar-light ">
+<nav class="navbar navbar-expand-lg black-nav">
   <a class="navbar-brand" href="#">Pixogram</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menu" aria-controls="menu" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -32,7 +32,7 @@
         <a class="nav-link"[routerLink]="['/gallery']">Gallery</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link " [routerLink]="['/connections']">Connections</a>
+        <a class="nav-link " [routerLink]="['/profile']">Profile</a>
       </li>
   <li *ngIf="authentication.isUserLoggedIn()" class="nav-item"><a [routerLink]="['/logout']" class="nav-link btn-option-nav">logout</a></li>
 
